@@ -92,7 +92,7 @@ class Lenet:
 
 # Create a convolutional neural network for training.
 batch_sz = 100
-n_epochs = 150
+n_epochs = 1000
 nn = Lenet(batch_sz, lr = .0001)
 # Train the network on the cifar dataset.
 train_errors = np.ndarray(n_epochs)

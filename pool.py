@@ -16,12 +16,12 @@ X = T.tensor3(name = 'X')
 op = downsample.max_pool_2d(input = X, ds = (4, 4),
                            ignore_border = True)
 pool = theano.function([X], outputs = op)
-# Generate the feature map by convolving the filter with the image.
+# Generate the feature map by subsampling the image.
 feat_map = pool(bugatti_p)
 feat_map_p = feat_map.transpose(1, 2, 0)
 # Plot the original image.
 plt.subplot(1, 2, 1); plt.axis('off'); plt.imshow(bugatti)
-# Plot the convolved image.
+# Plot the subsampled image.
 plt.subplot(1, 2, 2); plt.axis('off'); plt.imshow(feat_map_p)
 # Show the results on the screen.
 plt.show()
